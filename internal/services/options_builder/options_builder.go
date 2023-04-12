@@ -11,7 +11,6 @@ import (
 	"github.com/hexdigest/gowrap/pkg"
 	"github.com/samber/lo"
 	"github.com/schollz/progressbar/v3"
-	"github.com/sirupsen/logrus"
 	"github.com/ythosa/gowrapper/internal/logging"
 	"github.com/ythosa/gowrapper/internal/model"
 )
@@ -29,7 +28,7 @@ package {{.Package.Name}}
 `
 
 type OptionsBuilder struct {
-	logger *logrus.Logger
+	logger logging.Logger
 
 	template     []byte
 	templatePath string

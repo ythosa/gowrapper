@@ -13,13 +13,12 @@ import (
 	"github.com/fatih/color"
 	"github.com/rodaine/table"
 	"github.com/samber/lo"
-	"github.com/sirupsen/logrus"
 	"github.com/ythosa/gowrapper/internal/logging"
 	"github.com/ythosa/gowrapper/internal/model"
 )
 
 type InterfacesFinder struct {
-	logger *logrus.Logger
+	logger logging.Logger
 }
 
 func NewInterfacesFinder() *InterfacesFinder {

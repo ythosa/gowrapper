@@ -7,7 +7,6 @@ import (
 	"sync"
 
 	gowrap "github.com/hexdigest/gowrap/generator"
-	"github.com/sirupsen/logrus"
 	"github.com/ythosa/gowrapper/internal/logging"
 	"github.com/ythosa/gowrapper/internal/model"
 )
@@ -21,7 +20,7 @@ type OptionsBuilder interface {
 }
 
 type Generator struct {
-	logger *logrus.Logger
+	logger logging.Logger
 
 	finder  Finder
 	builder OptionsBuilder

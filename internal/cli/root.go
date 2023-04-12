@@ -23,8 +23,10 @@ func NewRootCommand() RootCommand {
 	return cmd
 }
 
-func (cmd RootCommand) RegisterCommands(cmds ...descriptable) {
+func (cmd RootCommand) RegisterCommands(cmds ...descriptable) RootCommand {
 	cmd.AddCommand(lo.Map(cmds, func(c descriptable, _ int) *cobra.Command { return c.descriptor() })...)
+
+	return cmd
 }
 
 func (cmd RootCommand) Execute() {

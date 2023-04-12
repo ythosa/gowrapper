@@ -89,7 +89,7 @@ func (builder *OptionsBuilder) buildOptions(file string, infs string) gowrap.Opt
 
 	outputFile := builder.buildOutput(dir, infs)
 	_, outputFileName := filepath.Split(outputFile)
-	//{{.Options.HeaderVars.Template}} -o {{.Options.HeaderVars.OutputFileName}}{{.Options.HeaderVars.VarsArgs}}
+
 	return gowrap.Options{
 		InterfaceName:  infs,
 		SourcePackage:  sourcePackage.PkgPath,

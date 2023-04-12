@@ -22,24 +22,25 @@ func NewGenCommand(generatorFactory GeneratorFactory) *GenCommand {
 
 func (cmd *GenCommand) descriptor() *cobra.Command {
 	cc := &cobra.Command{
-		Use: "gen",
+		Use:   "gen",
+		Short: "Generates wrappers",
 		Run: func(_ *cobra.Command, _ []string) {
 			cmd.generatorFactory.Construct(cmd.options).Generate()
 		},
 	}
 
 	cc.Flags().StringVarP(&cmd.options.OutputFolder,
-		"out-folder", "o", "", "Folder name where to generate wraps")
+		"out-folder", "o", "", "folder name where to generate wraps")
 	cc.Flags().StringVarP(&cmd.options.FilePostfix,
-		"postfix", "p", "", "File postfix for wraps files")
+		"postfix", "p", "", "file postfix for wraps files")
 	cc.Flags().StringVarP(&cmd.options.TemplatePath,
-		"template", "t", "", "Full path for template")
+		"template", "t", "", "full path for template")
 	cc.Flags().StringSliceVar(&cmd.options.ExcludedDirs,
-		"excluded-dirs", nil, "Parts of paths of excluded dirs")
+		"excluded-dirs", nil, "parts of paths of excluded dirs")
 	cc.Flags().StringSliceVar(&cmd.options.ExcludedFiles,
-		"excluded-files", nil, "Parts of paths of excluded files")
+		"excluded-files", nil, "parts of paths of excluded files")
 	cc.Flags().StringVarP(&cmd.options.InitialDirectory,
-		"dir", "d", "", "Path of initial directory")
+		"dir", "d", "", "path of initial directory")
 
 	return cc
 }

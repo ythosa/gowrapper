@@ -12,7 +12,6 @@
     │  │  ├─ file_with_usecase_interface.go
     │  │  ├─ excluded_file1.go
     │  │  ├─ excluded_file2.go
-    │  │  ├─ usecase_tracing.go
     ```
 * Command:
     ```shell
